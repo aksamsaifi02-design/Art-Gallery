@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Art Gallery</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+
+    <style>
+        .dashboard-card {
+            border: none;
+            border-radius: var(--gallery-radius);
+            background: var(--gallery-paper);
+            box-shadow: var(--gallery-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .dashboard-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--gallery-shadow-hover);
+        }
+        .dashboard-icon { font-size: 32px; }
+        .stat-number { font-size: 32px; font-weight: 700; color: var(--gallery-ink); }
+        .stat-label { color: var(--gallery-muted); }
+        .welcome-section {
+            background: var(--gallery-paper);
+            border-radius: var(--gallery-radius);
+            padding: 25px;
+            box-shadow: var(--gallery-shadow);
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-dark gallery-navbar">
+    <div class="container">
+        <a href="dashboard.html" class="navbar-brand">Art<span>Gallery</span> Admin</a>
+        <div class="d-flex align-items-center">
+            <span id="adminName" class="text-light me-3">Admin</span>
+            <button id="logoutButton" class="btn btn-outline-light btn-sm">Logout</button>
+        </div>
+    </div>
+</nav>
+
+<div class="container py-5">
+
+    <div class="welcome-section mb-4">
+        <h2 class="mb-1">Welcome back</h2>
+        <p class="text-muted mb-0">Here's what's happening across the gallery right now.</p>
+    </div>
+
+    <div class="row g-4 mb-5">
+        <div class="col-md-4">
+            <div class="card dashboard-card h-100">
+                <div class="card-body text-center py-4">
+                    <div class="dashboard-icon mb-2">🧑‍🎨</div>
+                    <div id="artistCount" class="stat-number">0</div>
+                    <div class="stat-label">Registered Artists</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card dashboard-card h-100">
+                <div class="card-body text-center py-4">
+                    <div class="dashboard-icon mb-2">🖼️</div>
+                    <div id="artworkCount" class="stat-number">0</div>
+                    <div class="stat-label">Total Artworks</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card dashboard-card h-100">
+                <div class="card-body text-center py-4">
+                    <div class="dashboard-icon mb-2">✉️</div>
+                    <div id="enquiryCount" class="stat-number">0</div>
+                    <div class="stat-label">Buyer Enquiries</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card dashboard-card">
+        <div class="card-body py-4">
+            <h5 class="mb-2">Browse the public gallery</h5>
+            <p class="text-muted mb-3">See exactly what viewers see, including every artwork currently listed.</p>
+            <a href="../viewer/gallery.html" class="btn btn-viewer text-white">Open Gallery</a>
+        </div>
+    </div>
+
+</div>
+
+<script src="../js/admin.js"></script>
+</body>
+</html>
